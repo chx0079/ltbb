@@ -1,10 +1,11 @@
 
 import { GoogleGenAI } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
-
 export const generateAIRoast = async (): Promise<string> => {
   try {
+    // 在调用时实例化，防止顶层执行时 process 未定义导致崩溃
+    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+    
     const response = await ai.models.generateContent({
       model: 'gemini-3-flash-preview',
       contents: "请用中文写一句关于‘李腾’的非常幽默、无害、夸张且可爱的‘大笨蛋’语录。注意：李腾是一个女孩子。字数在30字以内。要求脑洞大开，比如她干了什么傻萌的事。",

@@ -88,4 +88,30 @@ const App: React.FC = () => {
               className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 px-8 rounded-2xl shadow-lg transition-all active:scale-95 disabled:opacity-50 flex items-center justify-center"
             >
               <i className="fas fa-magic mr-2"></i>
-              AI 捕捉
+              AI 捕捉灵感
+            </button>
+          </div>
+        </div>
+
+        {/* Counter Widget */}
+        <div className="mt-8 text-center text-gray-400 font-bold text-sm">
+          今日已记录李腾傻萌值: <span className="text-pink-500 text-xl">{count}</span> 点
+        </div>
+      </div>
+
+      {/* Footer / Floating Labels */}
+      <div className="fixed bottom-8 flex gap-8 opacity-40 select-none pointer-events-none hidden md:flex">
+        <span className="text-4xl font-funny rotate-12 text-pink-400">萌萌哒</span>
+        <span className="text-4xl font-funny -rotate-12 text-purple-400">大笨蛋</span>
+        <span className="text-4xl font-funny rotate-6 text-orange-400">李腾女侠</span>
+      </div>
+
+      {/* Disclaimer */}
+      <p className="mt-12 text-xs text-gray-400 italic z-10">
+        * 本网站仅供娱乐，记录李腾女侠的各种可爱瞬间。
+      </p>
+    </div>
+  );
+};
+
+export default App;
